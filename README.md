@@ -134,7 +134,7 @@ sudo nano /etc/nginx/sites-available/default
 server {
     listen 80;
     listen [::]:80;
-    server_name <domainin> *.<domainin>;
+    server_name kriptosekici.online *.kriptosekici.online;
 
     location / {
         return 301 https://$host$request_uri;
@@ -145,10 +145,10 @@ server {
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
-    server_name <domainin> *.<domainin>;
+    server_name kriptosekici.online *.kriptosekici.online;
 
-    ssl_certificate /etc/letsencrypt/live/<domainin>/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/<domainin>/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/kriptosekici.online/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/kriptosekici.online/privkey.pem;
 
     location / {
         proxy_pass http://localhost:3000;
